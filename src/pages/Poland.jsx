@@ -80,8 +80,11 @@ export default function Poland() {
 const Container = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@1,500&display=swap');
     @media screen and (max-width: 480px) {
+        *{
+            background-color: var(--tg-theme-secondary-bg-color);
+        }
     body{
-        background-color: var(--tg-theme-secondary-bg-color);
+       
     }
     nav{
      display: flex;
@@ -95,7 +98,6 @@ const Container = styled.div`
     .titleCountry{
         text-align: center;
         font-family: 'DM Sans', sans-serif;
-        color: rgb(108, 108, 225);
     }
     .univers{
         display: flex;
@@ -128,6 +130,10 @@ const Container = styled.div`
     }
     .hint{
         color: var(--tg-theme-hint-color);
+    }
+
+    h1{
+        color: var(--tg-theme-text-color);
     }
 }
 `
