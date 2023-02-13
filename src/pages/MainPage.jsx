@@ -128,9 +128,7 @@ export default function MainPage() {
 const Container = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@1,500&display=swap');
     @media screen and (max-width: 480px) {
-    body{
-        background-color: var(--tg-theme-bg-color);
-    }
+      margin: 10px;
    nav{
     display: flex;
     justify-content: space-between;

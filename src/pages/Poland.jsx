@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import { Link } from 'react-router-dom'
 import vizja from "../assets/poland/vizja.jpeg"
 
 export default function Poland() {
@@ -8,14 +8,14 @@ export default function Poland() {
     <Container>
         <h1 class="titleCountry">Polsha universitetlari</h1>
             <div class="univers">
-                <div class="university">
+                <Link class="university" to={"/single"}>
                     <div class="vizja image"></div>
                     <div class="name">Vizja university of economics and human sciences</div>
                     <div class="hint price">Kontrakt: min-$2100</div>
                     <div class="hint ielts">IELTS: min-5.5</div>
                     <div class="hint ielts">Bakalavr Magistratura</div>
                     <div class="hint city">Warshava</div>
-                </div>
+                </Link>
                 <div class="university">
                     <div class="vizja image"></div>
                     <div class="name">Vizja university of economics and human sciences</div>
