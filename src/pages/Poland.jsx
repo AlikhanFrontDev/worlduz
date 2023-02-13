@@ -8,48 +8,70 @@ export default function Poland() {
     <Container>
         <h1 class="titleCountry">Polsha universitetlari</h1>
             <div class="univers">
-            <div class="university">
-                <div class="vizja image"></div>
-                <div class="name">Vizja university of economics and human sciences</div>
-                <div class="price">Kontrakt: min-$2100</div>
-                <div class="ielts">IELTS: min-5.5</div>
-                <div class="city">Warshava</div>
-            </div>
-            <div class="university">
-                <div class="vizja image"></div>
-                <div class="name">Vizja university of economics and human sciences</div>
-                <div class="price">Kontrakt: min-$2100</div>
-                <div class="ielts">IELTS: min-5.5</div>
-                <div class="city">Warshava</div>
-            </div>
-            <div class="university">
-                <div class="vizja image"></div>
-                <div class="name">Vizja university of economics and human sciences</div>
-                <div class="price">Kontrakt: min-$2100</div>
-                <div class="ielts">IELTS: min-5.5</div>
-                <div class="city">Warshava</div>
-            </div>
-            <div class="university">
-                <div class="vizja image"></div>
-                <div class="name">Vizja university of economics and human sciences</div>
-                <div class="price">Kontrakt: min-$2100</div>
-                <div class="ielts">IELTS: min-5.5</div>
-                <div class="city">Warshava</div>
-            </div>
-            <div class="university">
-                <div class="vizja image"></div>
-                <div class="name">Vizja university of economics and human sciences</div>
-                <div class="price">Kontrakt: min-$2100</div>
-                <div class="ielts">IELTS: min-5.5</div>
-                <div class="city">Warshava</div>
-            </div>
-            <div class="university">
-                <div class="vizja image"></div>
-                <div class="name">Vizja university of economics and human sciences</div>
-                <div class="price">Kontrakt: min-$2100</div>
-                <div class="ielts">IELTS: min-5.5</div>
-                <div class="city">Warshava</div>
-            </div>
+                <div class="university">
+                    <div class="vizja image"></div>
+                    <div class="name">Vizja university of economics and human sciences</div>
+                    <div class="hint price">Kontrakt: min-$2100</div>
+                    <div class="hint ielts">IELTS: min-5.5</div>
+                    <div class="hint ielts">Bakalavr Magistratura</div>
+                    <div class="hint city">Warshava</div>
+                </div>
+                <div class="university">
+                    <div class="vizja image"></div>
+                    <div class="name">Vizja university of economics and human sciences</div>
+                    <div class="hint price">Kontrakt: min-$2100</div>
+                    <div class="hint ielts">IELTS: min-5.5</div>
+                    <div class="hint ielts">Bakalavr Magistratura</div>
+                    <div class="hint city">Warshava</div>
+                </div>
+                <div class="university">
+                    <div class="vizja image"></div>
+                    <div class="name">Vizja university of economics and human sciences</div>
+                    <div class="hint price">Kontrakt: min-$2100</div>
+                    <div class="hint ielts">IELTS: min-5.5</div>
+                    <div class="hint ielts">Bakalavr Magistratura</div>
+                    <div class="hint city">Warshava</div>
+                </div>
+                <div class="university">
+                    <div class="vizja image"></div>
+                    <div class="name">Vizja university of economics and human sciences</div>
+                    <div class="hint price">Kontrakt: min-$2100</div>
+                    <div class="hint ielts">IELTS: min-5.5</div>
+                    <div class="hint ielts">Bakalavr Magistratura</div>
+                    <div class="hint city">Warshava</div>
+                </div>
+                <div class="university">
+                    <div class="vizja image"></div>
+                    <div class="name">Vizja university of economics and human sciences</div>
+                    <div class="hint price">Kontrakt: min-$2100</div>
+                    <div class="hint ielts">IELTS: min-5.5</div>
+                    <div class="hint ielts">Bakalavr Magistratura</div>
+                    <div class="hint city">Warshava</div>
+                </div>
+                <div class="university">
+                    <div class="vizja image"></div>
+                    <div class="name">Vizja university of economics and human sciences</div>
+                    <div class="hint price">Kontrakt: min-$2100</div>
+                    <div class="hint ielts">IELTS: min-5.5</div>
+                    <div class="hint ielts">Bakalavr Magistratura</div>
+                    <div class="hint city">Warshava</div>
+                </div>
+                <div class="university">
+                    <div class="vizja image"></div>
+                    <div class="name">Vizja university of economics and human sciences</div>
+                    <div class="hint price">Kontrakt: min-$2100</div>
+                    <div class="hint ielts">IELTS: min-5.5</div>
+                    <div class="hint ielts">Bakalavr Magistratura</div>
+                    <div class="hint city">Warshava</div>
+                </div>
+                <div class="university">
+                    <div class="vizja image"></div>
+                    <div class="name">Vizja university of economics and human sciences</div>
+                    <div class="hint price">Kontrakt: min-$2100</div>
+                    <div class="hint ielts">IELTS: min-5.5</div>
+                    <div class="hint ielts">Bakalavr Magistratura</div>
+                    <div class="hint city">Warshava</div>
+                </div>
             </div>
     </Container>
   )
@@ -59,7 +81,7 @@ const Container = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@1,500&display=swap');
     @media screen and (max-width: 480px) {
     body{
-        background-color: var(--tg-theme-bg-color);
+        background-color: var(--tg-theme-secondary-bg-color);
     }
     nav{
      display: flex;
@@ -79,19 +101,22 @@ const Container = styled.div`
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-
+        gap: 5px;
     }
     .university{
-        /* background-color: red; */
-        height: 300px;
+        background-color: var(--tg-theme-bg-color);
+        /* border: 1px solid var(--tg-theme-hint-color); */
+        padding: 5px;
+        min-height: 300px;
         width: 180px;
         border-radius: 10px;
         /* color: white; */
         font-family: 'DM Sans', sans-serif;
-        margin-bottom: 60px;
+        /* margin-bottom: 60px; */
     }
     .name{
         font-weight: 800;
+        color: var(--tg-theme-text-color);
     }
     .image{
         width: 180px;
@@ -100,6 +125,9 @@ const Container = styled.div`
         background-image: url(${vizja});
         background-size: cover;
         border-radius: 10px;
+    }
+    .hint{
+        color: var(--tg-theme-hint-color);
     }
 }
 `
