@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import vizja from "../assets/poland/vizja.jpeg";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -20,6 +20,9 @@ export default function SinglePage() {
         <div className="price">
           <p>top: 1000</p>
         </div>
+        <Link className="button" to={"/form"}>
+          Ariza qoldirish
+        </Link>
         <div className="accordion">
           <Accordion
             className="colorAccardion"
@@ -49,8 +52,8 @@ export default function SinglePage() {
           </Accordion>
           <Accordion
             className="colorAccardion"
-            expanded={expanded === "panel1"}
-            onChange={handleChange("panel1")}
+            expanded={expanded === "panel2"}
+            onChange={handleChange("panel2")}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
@@ -75,8 +78,8 @@ export default function SinglePage() {
           </Accordion>
           <Accordion
             className="colorAccardion"
-            expanded={expanded === "panel1"}
-            onChange={handleChange("panel1")}
+            expanded={expanded === "panel3"}
+            onChange={handleChange("panel3")}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
@@ -101,8 +104,8 @@ export default function SinglePage() {
           </Accordion>
           <Accordion
             className="colorAccardion"
-            expanded={expanded === "panel1"}
-            onChange={handleChange("panel1")}
+            expanded={expanded === "panel4"}
+            onChange={handleChange("panel4")}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
@@ -127,8 +130,8 @@ export default function SinglePage() {
           </Accordion>
           <Accordion
             className="colorAccardion"
-            expanded={expanded === "panel1"}
-            onChange={handleChange("panel1")}
+            expanded={expanded === "panel5"}
+            onChange={handleChange("panel5")}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
@@ -153,8 +156,8 @@ export default function SinglePage() {
           </Accordion>
           <Accordion
             className="colorAccardion"
-            expanded={expanded === "panel1"}
-            onChange={handleChange("panel1")}
+            expanded={expanded === "panel6"}
+            onChange={handleChange("panel6")}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
@@ -179,8 +182,8 @@ export default function SinglePage() {
           </Accordion>
           <Accordion
             className="colorAccardion"
-            expanded={expanded === "panel1"}
-            onChange={handleChange("panel1")}
+            expanded={expanded === "panel7"}
+            onChange={handleChange("panel7")}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
@@ -205,8 +208,8 @@ export default function SinglePage() {
           </Accordion>
           <Accordion
             className="colorAccardion"
-            expanded={expanded === "panel1"}
-            onChange={handleChange("panel1")}
+            expanded={expanded === "panel8"}
+            onChange={handleChange("panel8")}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
@@ -270,5 +273,17 @@ const Container = styled.div`
   }
   .info {
     color: var(--tg-theme-hint-color);
+  }
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 5px auto;
+    width: 200px;
+    height: 50px;
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    text-decoration: none;
   }
 `;
