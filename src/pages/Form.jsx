@@ -11,7 +11,7 @@ export default function Form() {
         <input type="text" placeholder="telefon raqam" />
         <input type="text" placeholder="shahringiz" />
         <input type="text" placeholder="til bilish darajasi" />
-        <button>Yuborish</button>
+        <button type="reset">Yuborish</button>
       </Container>
     </div>
   );
