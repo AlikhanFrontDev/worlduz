@@ -21,7 +21,7 @@ export default function SinglePage() {
           <p>top: 1000</p>
         </div>
         <div className="accordion">
-          {/* <Accordion
+          <Accordion
             className="colorAccardion"
             expanded={expanded === "panel1"}
             onChange={handleChange("panel1")}
@@ -46,7 +46,7 @@ export default function SinglePage() {
                 animi.
               </Typography>
             </AccordionDetails>
-          </Accordion> */}
+          </Accordion>
         </div>
       </Container>
     </div>
