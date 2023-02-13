@@ -101,14 +101,14 @@ const Container = styled.div`
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        gap: 5px;
+        /* gap: 5px; */
     }
     .university{
         background-color: var(--tg-theme-bg-color);
         /* border: 1px solid var(--tg-theme-hint-color); */
-        padding: 5px;
+        /* padding: 5px; */
         min-height: 300px;
-        width: 180px;
+        width: 170px;
         border-radius: 10px;
         /* color: white; */
         font-family: 'DM Sans', sans-serif;
