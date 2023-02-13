@@ -121,6 +121,8 @@ const Container = styled.div`
       /* gap: 5px; */
     }
     .university {
+      color: var(--tg-theme-text-color);
+      text-decoration: none;
       background-color: var(--tg-theme-bg-color);
       /* border: 1px solid var(--tg-theme-hint-color); */
       /* padding: 5px; */

@@ -27,7 +27,189 @@ export default function SinglePage() {
             onChange={handleChange("panel1")}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
+              expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
+                Economics
+              </Typography>
+              <Typography className="info" sx={{ color: "text.secondary" }}>
+                Bakalavr
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails className="info">
+              <Typography>2.500 EUR (3 yil)</Typography>
+              <Typography>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                praesentium vitae facere itaque placeat minus impedit id, rem ea
+                animi.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            className="colorAccardion"
+            expanded={expanded === "panel1"}
+            onChange={handleChange("panel1")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
+                Economics
+              </Typography>
+              <Typography className="info" sx={{ color: "text.secondary" }}>
+                Bakalavr
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails className="info">
+              <Typography>2.500 EUR (3 yil)</Typography>
+              <Typography>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                praesentium vitae facere itaque placeat minus impedit id, rem ea
+                animi.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            className="colorAccardion"
+            expanded={expanded === "panel1"}
+            onChange={handleChange("panel1")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
+                Economics
+              </Typography>
+              <Typography className="info" sx={{ color: "text.secondary" }}>
+                Bakalavr
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails className="info">
+              <Typography>2.500 EUR (3 yil)</Typography>
+              <Typography>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                praesentium vitae facere itaque placeat minus impedit id, rem ea
+                animi.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            className="colorAccardion"
+            expanded={expanded === "panel1"}
+            onChange={handleChange("panel1")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
+                Economics
+              </Typography>
+              <Typography className="info" sx={{ color: "text.secondary" }}>
+                Bakalavr
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails className="info">
+              <Typography>2.500 EUR (3 yil)</Typography>
+              <Typography>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                praesentium vitae facere itaque placeat minus impedit id, rem ea
+                animi.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            className="colorAccardion"
+            expanded={expanded === "panel1"}
+            onChange={handleChange("panel1")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
+                Economics
+              </Typography>
+              <Typography className="info" sx={{ color: "text.secondary" }}>
+                Bakalavr
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails className="info">
+              <Typography>2.500 EUR (3 yil)</Typography>
+              <Typography>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                praesentium vitae facere itaque placeat minus impedit id, rem ea
+                animi.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            className="colorAccardion"
+            expanded={expanded === "panel1"}
+            onChange={handleChange("panel1")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
+                Economics
+              </Typography>
+              <Typography className="info" sx={{ color: "text.secondary" }}>
+                Bakalavr
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails className="info">
+              <Typography>2.500 EUR (3 yil)</Typography>
+              <Typography>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                praesentium vitae facere itaque placeat minus impedit id, rem ea
+                animi.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            className="colorAccardion"
+            expanded={expanded === "panel1"}
+            onChange={handleChange("panel1")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
+                Economics
+              </Typography>
+              <Typography className="info" sx={{ color: "text.secondary" }}>
+                Bakalavr
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails className="info">
+              <Typography>2.500 EUR (3 yil)</Typography>
+              <Typography>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                praesentium vitae facere itaque placeat minus impedit id, rem ea
+                animi.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            className="colorAccardion"
+            expanded={expanded === "panel1"}
+            onChange={handleChange("panel1")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon color="var(--tg-theme-text-color)" />}
               aria-controls="panel1bh-content"
               id="panel1bh-header"
             >
@@ -64,10 +246,10 @@ const Container = styled.div`
   .price {
     width: 150px;
     height: 150px;
-    background-color: #000000;
+    background-color: #00000087;
     border-radius: 50%;
     position: absolute;
-    top: 350px;
+    top: 0;
     left: 20px;
     display: flex;
     align-items: center;
@@ -78,7 +260,7 @@ const Container = styled.div`
     color: #fff;
   }
   .accordion {
-    margin-top: 100px;
+    /* margin-top: 50px; */
   }
   .colorAccardion {
     background-color: var(--tg-theme-bg-color);
