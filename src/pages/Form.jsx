@@ -37,6 +37,9 @@ const Container = styled.form`
     color: var(--tg-theme-hint-color);
     background-color: var(--tg-theme-bg-color);
   }
+  input:focus {
+    outline: none;
+  }
   button {
     width: 200px;
     height: 50px;
