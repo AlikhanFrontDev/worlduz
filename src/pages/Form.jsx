@@ -1,15 +1,48 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
 
 export default function Form() {
   return (
     <div>
-        <form>
-            <input type="text" placeholder='ism' />
-            <input type="text" placeholder='familiya' />
-            <input type="text" placeholder='telefon raqam'/>
-            <input type="text" placeholder='shahringiz'/>
-            <input type="text" placeholder='til bilish darajasi'/>
-        </form>
+      <Title> Malumotlaringizni qoldiring</Title>
+      <Container>
+        <input type="text" placeholder="ism" />
+        <input type="text" placeholder="familiya" />
+        <input type="text" placeholder="telefon raqam" />
+        <input type="text" placeholder="shahringiz" />
+        <input type="text" placeholder="til bilish darajasi" />
+        <button>Yuborish</button>
+      </Container>
     </div>
-  )
+  );
 }
+
+const Title = styled.h3`
+  color: var(--tg-theme-text-color);
+  font-family: sans-serif;
+  width: 75%;
+  margin: 10px auto;
+`;
+const Container = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  input {
+    width: 75%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid var(--tg-theme-text-color);
+    padding: 10px;
+    color: var(--tg-theme-hint-color);
+    background-color: var(--tg-theme-bg-color);
+  }
+  button {
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+  }
+`;
