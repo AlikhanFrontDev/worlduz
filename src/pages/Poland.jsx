@@ -124,7 +124,7 @@ const Container = styled.div`
       color: var(--tg-theme-text-color);
       text-decoration: none;
       background-color: var(--tg-theme-bg-color);
-      background-color: red;
+      /* background-color: red; */
       /* border: 1px solid var(--tg-theme-hint-color); */
       /* border: 1px solid red; */
       text-align: center;
