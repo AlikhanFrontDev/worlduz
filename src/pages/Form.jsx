@@ -34,10 +34,10 @@ const Container = styled.form`
     width: 82%;
     height: 30px;
     border: none;
-    border-bottom: 1px solid var(--tg-theme-text-color);
+    border-bottom: 1px solid var(--tg-theme-hint-color);
     padding: 10px;
     color: var(--tg-theme-hint-color);
-    background-color: var(--tg-theme-bg-color);
+    background-color: var(--tg-theme-secondary-bg-color);
   }
   input:focus {
     outline: none;
