@@ -34,7 +34,7 @@ export default function SinglePage() {
               aria-controls="panel1bh-content"
               id="panel1bh-header"
             >
-              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
+              <Typography className="name" sx={{ width: "50%", flexShrink: 0 }}>
                 Economics
               </Typography>
               <Typography className="info" sx={{ color: "text.secondary" }}>
@@ -60,8 +60,8 @@ export default function SinglePage() {
               aria-controls="panel1bh-content"
               id="panel1bh-header"
             >
-              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
-                Economics
+              <Typography className="name" sx={{ width: "50%", flexShrink: 0 }}>
+                Aniq fanlar
               </Typography>
               <Typography className="info" sx={{ color: "text.secondary" }}>
                 Bakalavr
@@ -86,8 +86,8 @@ export default function SinglePage() {
               aria-controls="panel1bh-content"
               id="panel1bh-header"
             >
-              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
-                Economics
+              <Typography className="name" sx={{ width: "50%", flexShrink: 0 }}>
+                Xalqaro huquq
               </Typography>
               <Typography className="info" sx={{ color: "text.secondary" }}>
                 Bakalavr
@@ -112,11 +112,11 @@ export default function SinglePage() {
               aria-controls="panel1bh-content"
               id="panel1bh-header"
             >
-              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
-                Economics
+              <Typography className="name" sx={{ width: "50%", flexShrink: 0 }}>
+                Farmateftika
               </Typography>
               <Typography className="info" sx={{ color: "text.secondary" }}>
-                Bakalavr
+                Magisrtarura
               </Typography>
             </AccordionSummary>
             <AccordionDetails className="info">
@@ -138,11 +138,11 @@ export default function SinglePage() {
               aria-controls="panel1bh-content"
               id="panel1bh-header"
             >
-              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
-                Economics
+              <Typography className="name" sx={{ width: "50%", flexShrink: 0 }}>
+                Computer Science
               </Typography>
               <Typography className="info" sx={{ color: "text.secondary" }}>
-                Bakalavr
+                Magistratura
               </Typography>
             </AccordionSummary>
             <AccordionDetails className="info">
@@ -164,7 +164,7 @@ export default function SinglePage() {
               aria-controls="panel1bh-content"
               id="panel1bh-header"
             >
-              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
+              <Typography className="name" sx={{ width: "50%", flexShrink: 0 }}>
                 Economics
               </Typography>
               <Typography className="info" sx={{ color: "text.secondary" }}>
@@ -190,7 +190,7 @@ export default function SinglePage() {
               aria-controls="panel1bh-content"
               id="panel1bh-header"
             >
-              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
+              <Typography className="name" sx={{ width: "50%", flexShrink: 0 }}>
                 Economics
               </Typography>
               <Typography className="info" sx={{ color: "text.secondary" }}>
@@ -216,8 +216,11 @@ export default function SinglePage() {
               aria-controls="panel1bh-content"
               id="panel1bh-header"
             >
-              <Typography className="name" sx={{ width: "33%", flexShrink: 0 }}>
-                Economics
+              <Typography
+                className="name"
+                sx={{ minWidth: "50%", flexShrink: 0 }}
+              >
+                Human Science
               </Typography>
               <Typography className="info" sx={{ color: "text.secondary" }}>
                 Bakalavr
@@ -247,19 +250,19 @@ const Container = styled.div`
     border-bottom-right-radius: 40px;
   }
   .price {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background-color: #00000087;
     border-radius: 50%;
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .price p {
-    font-size: 25px;
+    font-size: 20px;
     color: #fff;
   }
   .accordion {

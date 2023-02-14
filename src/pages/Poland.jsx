@@ -86,7 +86,7 @@ export default function Poland() {
           <div className="hint price">Kontrakt: min-$2100</div>
           <div className="hint ielts">IELTS: min-5.5</div>
           <div className="hint ielts">Bakalavr Magistratura</div>
-          <div className="hint city">Warshava</div>
+          <div className="hint city">Warsjhdfjshfkjhdskhava</div>
         </div>
       </div>
     </Container>
@@ -100,6 +100,7 @@ const Container = styled.div`
       background-color: var(--tg-theme-secondary-bg-color);
     }
     body {
+      background-color: var(--tg-theme-bg-color);
     }
     nav {
       display: flex;
@@ -111,20 +112,24 @@ const Container = styled.div`
       margin: 10px;
     }
     .titleCountry {
+      margin-top: 10px;
       text-align: center;
       font-family: "DM Sans", sans-serif;
     }
     .univers {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       flex-wrap: wrap;
-      /* gap: 5px; */
+      gap: 5px;
     }
     .university {
+      margin-top: 10px;
       color: var(--tg-theme-text-color);
       text-decoration: none;
       background-color: var(--tg-theme-bg-color);
       /* border: 1px solid var(--tg-theme-hint-color); */
+      /* border: 1px solid red; */
+      text-align: center;
       /* padding: 5px; */
       min-height: 300px;
       width: 170px;
@@ -138,8 +143,9 @@ const Container = styled.div`
       color: var(--tg-theme-text-color);
     }
     .image {
-      width: 180px;
-      height: 200px;
+      /* margin: 0 auto; */
+      width: 100%;
+      height: 180px;
       background-color: blue;
       background-image: url(${vizja});
       background-size: cover;

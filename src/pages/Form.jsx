@@ -20,16 +20,18 @@ export default function Form() {
 const Title = styled.h3`
   color: var(--tg-theme-text-color);
   font-family: sans-serif;
-  width: 75%;
-  margin: 10px auto;
+  width: 82%;
+  margin: 20px auto;
+  text-align: center;
 `;
 const Container = styled.form`
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
   input {
-    width: 75%;
+    width: 82%;
     height: 30px;
     border: none;
     border-bottom: 1px solid var(--tg-theme-text-color);
