@@ -96,11 +96,8 @@ export default function Poland() {
 const Container = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@1,500&display=swap");
   @media screen and (max-width: 480px) {
-    * {
-      background-color: var(--tg-theme-secondary-bg-color);
-    }
     body {
-      background-color: var(--tg-theme-bg-color);
+      background-color: var(--tg-theme-secondary-bg-color);
     }
     nav {
       display: flex;
