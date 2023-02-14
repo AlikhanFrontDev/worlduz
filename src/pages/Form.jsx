@@ -49,5 +49,6 @@ const Container = styled.form`
     border-radius: 10px;
     background-color: var(--tg-theme-button-color);
     color: var(--tg-theme-button-text-color);
+    margin-top: 50px;
   }
 `;
