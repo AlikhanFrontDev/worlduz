@@ -20,7 +20,10 @@ export default function SinglePage() {
         <div className="price">
           <p>top: 1000</p>
         </div>
-        <Link className="button" to={"/form"}>
+        <Link
+          className="button"
+          to={"https://b24-2jofzh.bitrix24.site/crm_form_e0vmc/"}
+        >
           Ariza qoldirish
         </Link>
         <div className="accordion">
