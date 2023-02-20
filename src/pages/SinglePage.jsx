@@ -18,7 +18,7 @@ export default function SinglePage() {
   console.log(field);
   console.log(file)
 
-  useEffect((id) => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const { data: response } = await axios.get(
@@ -32,8 +32,8 @@ export default function SinglePage() {
     };
 
     fetchData();
-  }, []);
-  useEffect((id) => {
+  }, [id]);
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const { data: response } = await axios.get(
@@ -47,8 +47,8 @@ export default function SinglePage() {
     };
 
     fetchData();
-  }, []);
-  useEffect((id) => {
+  }, [id]);
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const { data: response } = await axios.get(
@@ -62,7 +62,7 @@ export default function SinglePage() {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
   const [expanded, setExpanded] = React.useState(false);
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
