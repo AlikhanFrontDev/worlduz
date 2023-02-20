@@ -6,12 +6,14 @@ import "./App.css";
 import Form from "./pages/Form";
 
 function App() {
+  // const { id } = useParams();
+
   return (
     <div className="App">
       <Routes>
         <Route exact path="/" element={<MainPage />} />
-        <Route path="poland" element={<Poland />} />
-        <Route path="single" element={<SinglePage />} />
+        <Route path='countries/:id/university' element={<Poland />} />
+        <Route path="countries/:id/university/:id" element={<SinglePage />} />
         <Route path="form" element={<Form />} />
       </Routes>
     </div>

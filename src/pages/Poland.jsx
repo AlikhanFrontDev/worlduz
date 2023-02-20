@@ -1,93 +1,54 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import vizja from "../assets/poland/vizja.jpeg";
+import axios from "axios";
+import api from "../Api";
 
 export default function Poland() {
+  const { id } = useParams();
+  console.log(id);
+  const [data, setData] = useState([]);
+  console.log(data);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data: response } = await axios.get(
+          api + `countries/${id}/university`
+        );
+        setData(response.university);
+        console.log(response.university);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <Container>
       <h1 class="titleCountry">Polsha universitetlari</h1>
-      <div class="univers">
-        <Link className="university" to={"/single"}>
-          <div className="vizja image"></div>
-          <div className="name">
-            Vizja university of economics and human sciences
-          </div>
-          <div className="hint price">Kontrakt: min-$2100</div>
-          <div className="hint ielts">IELTS: min-5.5</div>
-          <div className="hint ielts">Bakalavr Magistratura</div>
-          <div className="hint city">Warshava</div>
-        </Link>
-        <div className="university">
-          <div className="vizja image"></div>
-          <div className="name">
-            Vizja university of economics and human sciences
-          </div>
-          <div className="hint price">Kontrakt: min-$2100</div>
-          <div className="hint ielts">IELTS: min-5.5</div>
-          <div className="hint ielts">Bakalavr Magistratura</div>
-          <div className="hint city">Warshava</div>
-        </div>
-        <div className="university">
-          <div className="vizja image"></div>
-          <div className="name">
-            Vizja university of economics and human sciences
-          </div>
-          <div className="hint price">Kontrakt: min-$2100</div>
-          <div className="hint ielts">IELTS: min-5.5</div>
-          <div className="hint ielts">Bakalavr Magistratura</div>
-          <div className="hint city">Warshava</div>
-        </div>
-        <div className="university">
-          <div className="vizja image"></div>
-          <div className="name">
-            Vizja university of economics and human sciences
-          </div>
-          <div className="hint price">Kontrakt: min-$2100</div>
-          <div className="hint ielts">IELTS: min-5.5</div>
-          <div className="hint ielts">Bakalavr Magistratura</div>
-          <div className="hint city">Warshava</div>
-        </div>
-        <div className="university">
-          <div className="vizja image"></div>
-          <div className="name">
-            Vizja university of economics and human sciences
-          </div>
-          <div className="hint price">Kontrakt: min-$2100</div>
-          <div className="hint ielts">IELTS: min-5.5</div>
-          <div className="hint ielts">Bakalavr Magistratura</div>
-          <div className="hint city">Warshava</div>
-        </div>
-        <div className="university">
-          <div className="vizja image"></div>
-          <div className="name">
-            Vizja university of economics and human sciences
-          </div>
-          <div className="hint price">Kontrakt: min-$2100</div>
-          <div className="hint ielts">IELTS: min-5.5</div>
-          <div className="hint ielts">Bakalavr Magistratura</div>
-          <div className="hint city">Warshava</div>
-        </div>
-        <div className="university">
-          <div className="vizja image"></div>
-          <div className="name">
-            Vizja university of economics and human sciences
-          </div>
-          <div className="hint price">Kontrakt: min-$2100</div>
-          <div className="hint ielts">IELTS: min-5.5</div>
-          <div className="hint ielts">Bakalavr Magistratura</div>
-          <div className="hint city">Warshava</div>
-        </div>
-        <div className="university">
-          <div className="vizja image"></div>
-          <div className="name">
-            Vizja university of economics and human sciences
-          </div>
-          <div className="hint price">Kontrakt: min-$2100</div>
-          <div className="hint ielts">IELTS: min-5.5</div>
-          <div className="hint ielts">Bakalavr Magistratura</div>
-          <div className="hint city">Warsjhdfjshfkjhdskhava</div>
-        </div>
+      <div className="univers">
+        {data.map((i) => {
+          return (
+            <Link to={`${i.id}`}>
+              <div className="university">
+                <img
+                  className="image"
+                  src={`http://ishkal.uz/${i.image}`}
+                  alt="asd"
+                />
+                <div className="name">{i.name}</div>
+                <div className="hint price">min-kontrakt {i.min_price}</div>
+                <div className="hint ielts">IELTS: {i.min_ielts}</div>
+                <div className="hint ielts">{i.categories}</div>
+                <div className="hint city">{i.city_name}</div>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </Container>
   );
@@ -117,24 +78,18 @@ const Container = styled.div`
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      gap: 5px;
     }
     .university {
+      width: 60px;
       margin-top: 10px;
       color: var(--tg-theme-text-color);
       text-decoration: none;
       background-color: var(--tg-theme-bg-color);
-      /* background-color: red; */
-      /* border: 1px solid var(--tg-theme-hint-color); */
-      /* border: 1px solid red; */
-      text-align: center;
-      /* padding: 5px; */
       min-height: 300px;
       width: 170px;
       border-radius: 10px;
-      /* color: white; */
       font-family: "DM Sans", sans-serif;
-      /* margin-bottom: 60px; */
+      /* border: 1px solid red; */
     }
     .name {
       font-weight: 800;
@@ -143,11 +98,9 @@ const Container = styled.div`
     .image {
       /* margin: 0 auto; */
       width: 100%;
-      height: 180px;
-      background-color: blue;
-      background-image: url(${vizja});
-      background-size: cover;
+      height: 100px;
       border-radius: 10px;
+      object-fit: cover;
     }
     .hint {
       color: var(--tg-theme-hint-color);
@@ -155,6 +108,10 @@ const Container = styled.div`
 
     h1 {
       color: var(--tg-theme-text-color);
+    }
+    a{
+      color: var(--tg-theme-text-color);
+      text-decoration: none;
     }
   }
 `;

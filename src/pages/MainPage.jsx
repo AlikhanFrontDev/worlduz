@@ -1,17 +1,30 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import  api from "../Api"
+import axios from "axios";
 
-import england from "../assets/flag/uk.jpg";
-import germany from "../assets/flag/germany.png";
-import italy from "../assets/flag/italy.webp";
-import korea from "../assets/flag/korea.webp";
-import latvia from "../assets/flag/latvia.jpg";
-import poland from "../assets/flag/poland.webp";
-import turkey from "../assets/flag/turkey.jpg";
-import usa from "../assets/flag/usa.jpg";
+
 
 export default function MainPage() {
+  const [data, setData] = useState([]);
+
+
+  useEffect(() => {
+        const fetchData = async () => {
+        try {
+            const { data: response } = await axios.get(api + 'country');
+            setData(response.data);
+            console.log(response.data)
+        } catch (error) {
+            console.error(error.message);
+        }
+
+    }
+
+    fetchData();
+}, []);
+
   return (
     <Container>
       <nav>
@@ -110,32 +123,15 @@ export default function MainPage() {
         <div className="menu">Menu</div>
       </nav>
       <div className="countries">
-        <div className="country england">
-          <h1>Anglya</h1>
-        </div>
+       {data.map( i=> {
+        return(
+          
+          <Link to={`countries/${i.id}/university`} className="country background "style={{backgroundImage: `url('${i.image}')`}}>
+            <h1>{i.mame}</h1>
+          </Link>
 
-        <Link className="country poland" to={"/poland"}>
-          <h1>Polsha</h1>
-        </Link>
-
-        <div className="country usa">
-          <h1>AQSh</h1>
-        </div>
-        <div className="country latvia">
-          <h1>Latviya</h1>
-        </div>
-        <div className="country korea">
-          <h1>Koreya</h1>
-        </div>
-        <div className="country turkey">
-          <h1>Turkiya</h1>
-        </div>
-        <div className="country germany">
-          <h1>Germaniya</h1>
-        </div>
-        <div className="country italy">
-          <h1>Italiya</h1>
-        </div>
+        )
+})}
       </div>
     </Container>
   );
@@ -169,48 +165,12 @@ const Container = styled.div`
       justify-content: center;
       font-family: "DM Sans", sans-serif;
     }
+    .background {
+      background-position: center;
+      background-size: cover;
+    }
     h1 {
       color: white;
-    }
-    .england {
-      background-image: url(${england});
-      background-position: center;
-      background-size: cover;
-    }
-    .poland {
-      background-image: url(${poland});
-      background-position: center;
-      background-size: cover;
-    }
-    .usa {
-      background-image: url(${usa});
-      background-position: center;
-      background-size: cover;
-    }
-    .latvia {
-      background-image: url(${latvia});
-      background-position: center;
-      background-size: cover;
-    }
-    .korea {
-      background-image: url(${korea});
-      background-position: center;
-      background-size: cover;
-    }
-    .turkey {
-      background-image: url(${turkey});
-      background-position: center;
-      background-size: cover;
-    }
-    .germany {
-      background-image: url(${germany});
-      background-position: center;
-      background-size: cover;
-    }
-    .italy {
-      background-image: url(${italy});
-      background-position: center;
-      background-size: cover;
     }
   }
 `;
