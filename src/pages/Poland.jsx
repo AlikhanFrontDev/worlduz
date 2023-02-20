@@ -34,11 +34,11 @@ export default function Poland() {
           return (
             <Link to={`${i.id}`} key={i.id}>
               <div className="university">
-                <img
+                {/* <img
                   className="image"
                   src={`http://ishkal.uz/${i.image}`}
                   alt="asd"
-                />
+                /> */}
                 <div className="name">{i.name}</div>
                 <div className="hint price">min-kontrakt {i.min_price}</div>
                 <div className="hint ielts">IELTS: {i.min_ielts}</div>
