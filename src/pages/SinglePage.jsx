@@ -155,7 +155,7 @@ const Container = styled.div`
     background-color: var(--tg-theme-bg-color);
   }
   .name {
-    /* color: var(--tg-theme-text-color); */
+    color: var(--tg-theme-text-color);
   }
   .info {
     color: var(--tg-theme-hint-color);
