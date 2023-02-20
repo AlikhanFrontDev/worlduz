@@ -152,7 +152,7 @@ const Container = styled.div`
     /* margin-top: 50px; */
   }
   .colorAccardion {
-    /* background-color: var(--tg-theme-bg-color); */
+    background-color: var(--tg-theme-bg-color);
   }
   .name {
     /* color: var(--tg-theme-text-color); */
