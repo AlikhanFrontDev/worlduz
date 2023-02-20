@@ -25,7 +25,7 @@ export default function SinglePage() {
           api + `universities/${id}/field`
         );
         setData(response);
-        console.log(response.image);
+        console.log(response);
       } catch (error) {
         console.error(error.message);
       }
@@ -70,7 +70,7 @@ export default function SinglePage() {
   return (
     <div>
       <Container>
-        <img className="image" src={data.image} alt="" />
+        <img className="image" url={data.image} alt="" />
         <Link
           className="button"
           to={"https://b24-2jofzh.bitrix24.site/crm_form_e0vmc/"}
