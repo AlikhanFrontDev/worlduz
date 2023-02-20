@@ -16,7 +16,7 @@ export default function SinglePage() {
   const [file, setFile] = useState([]);
   console.log(data);
   console.log(field);
-  console.log(file)
+  console.log(file);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -71,53 +71,54 @@ export default function SinglePage() {
     <div>
       <Container>
         <img className="image" scr={`${data}`} alt="" />
-        <Link
-          className="button"
-          to={"https://b24-2jofzh.bitrix24.site/crm_form_e0vmc/"}
-        >
-          Ariza qoldirish
-        </Link>
-        <Link
-          className="button"
-          to={file}
-        >
-          Shartnoma yuklash
-        </Link>
+        <div className="buttons">
+          <Link
+            className="button"
+            to={"https://b24-2jofzh.bitrix24.site/crm_form_e0vmc/"}
+          >
+            Ariza qoldirish
+          </Link>
+          <Link className="button" to={file}>
+            Shartnoma yuklash
+          </Link>
+        </div>
         {field.map((field) => {
-          return(
-
-          <div className="accordion" key={field.id}>
-            <Accordion
-              className="colorAccardion"
-              expanded={expanded === `panel${field.id}`}
-              onChange={handleChange(`panel${field.id}`)}
-            >
-              <AccordionSummary
-                expandIcon={
-                  <ExpandMoreIcon color="var(--tg-theme-text-color)" />
-                }
-                aria-controls="panel1bh-content"
-                id="panel1bh-header"
+          return (
+            <div className="accordion" key={field.id}>
+              <Accordion
+                className="colorAccardion"
+                expanded={expanded === `panel${field.id}`}
+                onChange={handleChange(`panel${field.id}`)}
               >
-                <Typography
-                  className="name"
-                  sx={{ width: "50%", flexShrink: 0 }}
+                <AccordionSummary
+                  expandIcon={
+                    <ExpandMoreIcon color="var(--tg-theme-text-color)" />
+                  }
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
                 >
-                  {field.name}
-                </Typography>
-                <Typography className="info" sx={{ color: "text.secondary" }}>
-                  {field.category}
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails className="info">
-                <Typography>minimum kontrakt: {field.price} o'qish davomiyligi: {field.duration}yil</Typography>
-                <Typography className="description">
-                  {field.description}
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          </div>
-          )
+                  <Typography
+                    className="name"
+                    sx={{ width: "50%", flexShrink: 0 }}
+                  >
+                    {field.name}
+                  </Typography>
+                  <Typography className="info" sx={{ color: "text.secondary" }}>
+                    {field.category}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails className="info">
+                  <Typography>
+                    minimum kontrakt: {field.price} o'qish davomiyligi:{" "}
+                    {field.duration}yil
+                  </Typography>
+                  <Typography className="description">
+                    {field.description}
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            </div>
+          );
         })}
       </Container>
     </div>
@@ -125,6 +126,9 @@ export default function SinglePage() {
 }
 
 const Container = styled.div`
+.buttons{
+  display: flex;
+}
   margin: 0;
   /* .image {
     height: 45vh;
