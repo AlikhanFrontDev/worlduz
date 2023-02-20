@@ -28,11 +28,11 @@ export default function Poland() {
 
   return (
     <Container>
-      <h1 class="titleCountry">Polsha universitetlari</h1>
+      <h1 className="titleCountry">Polsha universitetlari</h1>
       <div className="univers">
         {data.map((i) => {
           return (
-            <Link to={`${i.id}`}>
+            <Link to={`${i.id}`} key={i.id}>
               <div className="university">
                 <img
                   className="image"
