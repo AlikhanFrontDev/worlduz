@@ -70,7 +70,7 @@ export default function SinglePage() {
   return (
     <div>
       <Container>
-        <img className="image" scr={data} alt="" />
+        <img className="image" scr={`${data}`} alt="" />
         <Link
           className="button"
           to={"https://b24-2jofzh.bitrix24.site/crm_form_e0vmc/"}
@@ -152,7 +152,7 @@ const Container = styled.div`
     /* margin-top: 50px; */
   }
   .colorAccardion {
-    background-color: var(--tg-theme-bg-color);
+    /* background-color: var(--tg-theme-bg-color); */
   }
   .name {
     color: var(--tg-theme-text-color);
