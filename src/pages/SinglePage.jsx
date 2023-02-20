@@ -70,7 +70,7 @@ export default function SinglePage() {
   return (
     <div>
       <Container>
-        <img className="image" url={data.image} alt="" />
+        <img className="image" scr={data.image} alt="" />
         <Link
           className="button"
           to={"https://b24-2jofzh.bitrix24.site/crm_form_e0vmc/"}
