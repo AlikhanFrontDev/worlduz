@@ -12,7 +12,6 @@ import api from "../Api";
 
 export default function SinglePage() {
   const { id } = useParams();
-  console.log(id);
   const [data, setData] = useState([]);
   const [field, setField] = useState([]);
   const [file, setFile] = useState([]);

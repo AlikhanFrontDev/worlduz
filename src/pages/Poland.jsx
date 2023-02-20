@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link, useParams } from "react-router-dom";
-import vizja from "../assets/poland/vizja.jpeg";
 import axios from "axios";
 import api from "../Api";
 
