@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link, useParams } from "react-router-dom";
-import vizja from "../assets/poland/vizja.jpeg";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -19,7 +18,7 @@ export default function SinglePage() {
   console.log(field);
   console.log(file)
 
-  useEffect(() => {
+  useEffect((id) => {
     const fetchData = async () => {
       try {
         const { data: response } = await axios.get(
@@ -34,7 +33,7 @@ export default function SinglePage() {
 
     fetchData();
   }, []);
-  useEffect(() => {
+  useEffect((id) => {
     const fetchData = async () => {
       try {
         const { data: response } = await axios.get(
@@ -49,7 +48,7 @@ export default function SinglePage() {
 
     fetchData();
   }, []);
-  useEffect(() => {
+  useEffect((id) => {
     const fetchData = async () => {
       try {
         const { data: response } = await axios.get(
