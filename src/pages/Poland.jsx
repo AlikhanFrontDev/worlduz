@@ -8,7 +8,8 @@ export default function Poland() {
   const { id } = useParams();
   console.log(id);
   const [data, setData] = useState([]);
-  console.log(data);
+  const [image, setImage] = useState([]);
+  console.log(image.image);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,6 +18,21 @@ export default function Poland() {
           api + `countries/${id}/university`
         );
         setData(response.university);
+        console.log(response.university);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+
+    fetchData();
+  }, [id]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data: response } = await axios.get(
+          api + `countries/${id}/university`
+        );
+        setImage(response.image);
         console.log(response.university);
       } catch (error) {
         console.error(error.message);
@@ -34,6 +50,7 @@ export default function Poland() {
           return (
             <Link to={`${i.id}`} key={i.id}>
               <div className="university">
+                <div className="image" style={{backgroundImage: `url('${image}')`}}></div>
                 {/* <img
                   className="image"
                   src={`http://ishkal.uz/${i.image}`}

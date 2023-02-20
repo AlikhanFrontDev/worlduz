@@ -11,10 +11,10 @@ import api from "../Api";
 
 export default function SinglePage() {
   const { id } = useParams();
-  const [data, setData] = useState([]);
+  const [image, setData] = useState([]);
   const [field, setField] = useState([]);
   const [file, setFile] = useState([]);
-  console.log(data);
+  console.log(image);
   console.log(field);
   console.log(file);
 
@@ -70,7 +70,8 @@ export default function SinglePage() {
   return (
     <div>
       <Container>
-        <img className="image" scr={`${data}`} alt="" />
+        <div className="image" style={{backgroundImage: `url('${image}')`}}></div>
+        {/* <img className="image" scr={`${data}`} alt="" /> */}
         <div className="buttons">
           <Link
             className="button"
@@ -130,12 +131,12 @@ const Container = styled.div`
   display: flex;
 }
   margin: 0;
-  /* .image {
+  .image {
     height: 45vh;
     width: 100vw;
     object-fit: cover;
     border-bottom-right-radius: 40px;
-  } */
+  }
   .price {
     /* width: 100px;
     height: 100px;
@@ -154,7 +155,7 @@ const Container = styled.div`
   }
   .accordion {
     /* margin-top: 50px; */
-    
+
   }
   .colorAccardion {
     background-color: var(--tg-theme-bg-color);
@@ -172,10 +173,11 @@ const Container = styled.div`
     justify-content: center;
     border-radius: 10px;
     margin: 5px auto;
-    width: 200px;
+    width: 170px;
     height: 50px;
     background-color: var(--tg-theme-button-color);
     color: var(--tg-theme-button-text-color);
     text-decoration: none;
+    /* background-color: red; */
   }
 `;
