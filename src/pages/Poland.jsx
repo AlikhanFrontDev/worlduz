@@ -89,6 +89,9 @@ const Container = styled.div`
       border-radius: 10px;
       font-family: "DM Sans", sans-serif;
       /* border: 1px solid red; */
+      text-align: center;
+      padding: 2px;
+      border: 0.1px solid white;
     }
     .name {
       font-weight: 800;

@@ -153,7 +153,8 @@ const Container = styled.div`
     color: #fff; */
   }
   .accordion {
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    
   }
   .colorAccardion {
     background-color: var(--tg-theme-bg-color);
