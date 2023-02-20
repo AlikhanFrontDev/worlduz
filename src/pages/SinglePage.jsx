@@ -24,7 +24,7 @@ export default function SinglePage() {
         const { data: response } = await axios.get(
           api + `universities/${id}/field`
         );
-        setData(response);
+        setData(response.image);
         console.log(response);
       } catch (error) {
         console.error(error.message);
@@ -70,7 +70,7 @@ export default function SinglePage() {
   return (
     <div>
       <Container>
-        <img className="image" scr={data.image} alt="" />
+        <img className="image" scr={data} alt="" />
         <Link
           className="button"
           to={"https://b24-2jofzh.bitrix24.site/crm_form_e0vmc/"}
@@ -126,12 +126,12 @@ export default function SinglePage() {
 
 const Container = styled.div`
   margin: 0;
-  .image {
+  /* .image {
     height: 45vh;
     width: 100vw;
     object-fit: cover;
     border-bottom-right-radius: 40px;
-  }
+  } */
   .price {
     /* width: 100px;
     height: 100px;

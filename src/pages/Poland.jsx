@@ -34,11 +34,11 @@ export default function Poland() {
           return (
             <Link to={`${i.id}`} key={i.id}>
               <div className="university">
-                <img
+                {/* <img
                   className="image"
                   src={`http://ishkal.uz/${i.image}`}
                   alt="asd"
-                />
+                /> */}
                 <div className="name">{i.name}</div>
                 <div className="hint price">min-kontrakt {i.min_price}</div>
                 <div className="hint ielts">IELTS: {i.min_ielts}</div>
@@ -84,7 +84,7 @@ const Container = styled.div`
       color: var(--tg-theme-text-color);
       text-decoration: none;
       background-color: var(--tg-theme-bg-color);
-      min-height: 300px;
+      min-height: 150px;
       width: 170px;
       border-radius: 10px;
       font-family: "DM Sans", sans-serif;
