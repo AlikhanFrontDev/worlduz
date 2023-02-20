@@ -54,8 +54,8 @@ export default function SinglePage() {
         const { data: response } = await axios.get(
           api + `universities/${id}/field`
         );
-        setFile(response.contact_file);
-        console.log(response.contact_file);
+        setFile(response.contactFile);
+        console.log(response.contactFile);
       } catch (error) {
         console.error(error.message);
       }
@@ -110,8 +110,8 @@ export default function SinglePage() {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails className="info">
-                <Typography>{field.price} ({field.duration})</Typography>
-                <Typography>
+                <Typography>minimum kontrakt: {field.price} o'qish davomiyligi: {field.duration}yil</Typography>
+                <Typography className="description">
                   {field.description}
                 </Typography>
               </AccordionDetails>
@@ -159,6 +159,7 @@ const Container = styled.div`
   }
   .info {
     color: var(--tg-theme-hint-color);
+    /* background-color: red; */
   }
   .button {
     display: flex;
