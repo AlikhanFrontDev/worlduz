@@ -29,7 +29,7 @@ export default function Poland() {
               <div className="university">
                 <div
                   className="image"
-                  style={{ backgroundImage: `url(http://ishkal.uz/${i.image})`}} 
+                  style={{ backgroundImage: url(`http://ishkal.uz/${i.image}`)}} 
                 >
                 </div>
                 <div className="name">{i.name}</div>
@@ -97,7 +97,6 @@ const Container = styled.div`
       border-radius: 10px;
       background-position: center;
       background-size: cover;
-      /* background-color:red; */
     }
     .hint {
       color: var(--tg-theme-hint-color);
