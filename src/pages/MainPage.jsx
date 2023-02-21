@@ -128,14 +128,13 @@ export default function MainPage() {
             <AiOutlineUserAdd />
           </div> */}
         </div>
-        {data
-          .filter((item) => {
+        {data.filter(item => {
             if (query === "") {
               return item;
             } else if (item.mame.toLowerCase().includes(query.toLowerCase())) {
-              return (item);
+              return item;
             }
-            return item
+            return false;
           }).map((i) => {
             return (
               <Link
@@ -145,7 +144,7 @@ export default function MainPage() {
               >
                 <h1>{i.mame}</h1>
               </Link>
-            )
+            );
           })}
       </div>
     </Container>
@@ -161,7 +160,7 @@ const Container = styled.div`
       justify-content: space-between;
       padding: 20px;
     }
-    .search{
+    .search {
       height: 30px;
       width: 100%;
       border-radius: 10px;
@@ -169,7 +168,7 @@ const Container = styled.div`
       padding: 10px;
       background-color: var(--tg-theme-bg-color);
       margin-bottom: 20px;
-      }
+    }
     a {
       text-decoration: none;
     }
