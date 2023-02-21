@@ -13,6 +13,7 @@ export default function SinglePage() {
   const { id } = useParams();
   const [image, setData] = useState([]);
   const [field, setField] = useState([]);
+  console.log(image)
   const [file, setFile] = useState([]);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ export default function SinglePage() {
         const { data: response } = await axios.get(
           api + `universities/${id}/field`
         );
-        setField(response.fields);
+        setField(response.data);
       } catch (error) {}
     };
 

@@ -7,6 +7,7 @@ import api from "../Api";
 export default function Poland() {
   const { id } = useParams();
   const [data, setData] = useState([]);
+  console.log(data)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +30,7 @@ export default function Poland() {
               <div className="university">
                 <div
                   className="image"
-                  style={{ backgroundImage: url(`http://ishkal.uz/${i.image}`)}} 
+                  style={{ backgroundImage: `url("${i.image}")`}} 
                 >
                 </div>
                 <div className="name">{i.name}</div>
