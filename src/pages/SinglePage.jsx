@@ -134,6 +134,8 @@ const Container = styled.div`
     height: 45vh;
     width: 100vw;
     object-fit: cover;
+    position: center;
+    background-size: cover;
     border-bottom-right-radius: 40px;
   }
   .colorAccardion {
