@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import { Link, useParams } from "react-router-dom";
+import styled from "styled-components";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -14,9 +14,6 @@ export default function SinglePage() {
   const [image, setData] = useState([]);
   const [field, setField] = useState([]);
   const [file, setFile] = useState([]);
-  console.log(image);
-  console.log(field);
-  console.log(file);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,10 +22,7 @@ export default function SinglePage() {
           api + `universities/${id}/field`
         );
         setData(response.image);
-        console.log(response);
-      } catch (error) {
-        console.error(error.message);
-      }
+      } catch (error) {}
     };
 
     fetchData();
@@ -40,10 +34,7 @@ export default function SinglePage() {
           api + `universities/${id}/field`
         );
         setField(response.fields);
-        console.log(response.fields);
-      } catch (error) {
-        console.error(error.message);
-      }
+      } catch (error) {}
     };
 
     fetchData();
@@ -55,10 +46,7 @@ export default function SinglePage() {
           api + `universities/${id}/field`
         );
         setFile(response.contactFile);
-        console.log(response.contactFile);
-      } catch (error) {
-        console.error(error.message);
-      }
+      } catch (error) {}
     };
 
     fetchData();
@@ -70,8 +58,10 @@ export default function SinglePage() {
   return (
     <div>
       <Container>
-        <div className="image" style={{backgroundImage: `url('${image}')`}}></div>
-        {/* <img className="image" scr={`${data}`} alt="" /> */}
+        <div
+          className="image"
+          style={{ backgroundImage: `url('${image}')` }}
+        ></div>
         <div className="buttons">
           <Link
             className="button"
@@ -110,10 +100,12 @@ export default function SinglePage() {
                 </AccordionSummary>
                 <AccordionDetails className="info">
                   <Typography>
-                    minimum kontrakt: {field.price} o'qish davomiyligi:{" "}
+                    <p className="title">kontrakt:</p> {field.price} <br />{" "}
+                    <p className="title">o'qish davomiyligi:</p>{" "}
                     {field.duration}yil
                   </Typography>
                   <Typography className="description">
+                    <p className="title">Fakultet haqida malumot: </p> <br />
                     {field.description}
                   </Typography>
                 </AccordionDetails>
@@ -127,35 +119,22 @@ export default function SinglePage() {
 }
 
 const Container = styled.div`
-.buttons{
-  display: flex;
-}
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+  font-family: "Open Sans", sans-serif;
+  .title {
+    color: var(--tg-theme-text-color);
+    font-weight: 600;
+  }
+  .buttons {
+    display: flex;
+  }
   margin: 0;
   .image {
     height: 45vh;
     width: 100vw;
     object-fit: cover;
     border-bottom-right-radius: 40px;
-  }
-  .price {
-    /* width: 100px;
-    height: 100px;
-    background-color: #00000087;
-    border-radius: 50%;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center; */
-  }
-  .price p {
-    /* font-size: 20px;
-    color: #fff; */
-  }
-  .accordion {
-    /* margin-top: 50px; */
-
   }
   .colorAccardion {
     background-color: var(--tg-theme-bg-color);
@@ -165,7 +144,9 @@ const Container = styled.div`
   }
   .info {
     color: var(--tg-theme-hint-color);
-    /* background-color: red; */
+  }
+  .description {
+    color: var(--tg-theme-hint-color);
   }
   .button {
     display: flex;
@@ -178,6 +159,5 @@ const Container = styled.div`
     background-color: var(--tg-theme-button-color);
     color: var(--tg-theme-button-text-color);
     text-decoration: none;
-    /* background-color: red; */
   }
 `;

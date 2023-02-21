@@ -1,29 +1,22 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import  api from "../Api"
+import api from "../Api";
 import axios from "axios";
-
-
 
 export default function MainPage() {
   const [data, setData] = useState([]);
 
-
   useEffect(() => {
-        const fetchData = async () => {
-        try {
-            const { data: response } = await axios.get(api + 'country');
-            setData(response.data);
-            console.log(response.data)
-        } catch (error) {
-            console.error(error.message);
-        }
-
-    }
+    const fetchData = async () => {
+      try {
+        const { data: response } = await axios.get(api + "country");
+        setData(response.data);
+      } catch (error) {}
+    };
 
     fetchData();
-}, []);
+  }, []);
 
   return (
     <Container>
@@ -123,15 +116,17 @@ export default function MainPage() {
         <div className="menu">Menu</div>
       </nav>
       <div className="countries">
-       {data.map( i=> {
-        return(
-          
-          <Link to={`countries/${i.id}/university`} className="country background "style={{backgroundImage: `url('${i.image}')`}}>
-            <h1>{i.mame}</h1>
-          </Link>
-
-        )
-})}
+        {data.map((i) => {
+          return (
+            <Link
+              to={`countries/${i.id}/university`}
+              className="country background "
+              style={{ backgroundImage: `url('${i.image}')` }}
+            >
+              <h1>{i.mame}</h1>
+            </Link>
+          );
+        })}
       </div>
     </Container>
   );
@@ -156,8 +151,7 @@ const Container = styled.div`
     }
     .country {
       background-color: red;
-      /* width: 100px; */
-      height: 100px;
+      height: 120px;
       border-radius: 10px;
       margin-bottom: 10px;
       display: flex;

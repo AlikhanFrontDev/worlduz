@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import { Link, useParams } from "react-router-dom";
+import styled from "styled-components";
 import axios from "axios";
 import api from "../Api";
 
 export default function Poland() {
   const { id } = useParams();
-  console.log(id);
   const [data, setData] = useState([]);
   const [image, setImage] = useState([]);
-  console.log(image.image);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,10 +16,7 @@ export default function Poland() {
           api + `countries/${id}/university`
         );
         setData(response.university);
-        console.log(response.university);
-      } catch (error) {
-        console.error(error.message);
-      }
+      } catch (error) {}
     };
 
     fetchData();
@@ -33,33 +28,26 @@ export default function Poland() {
           api + `countries/${id}/university`
         );
         setImage(response.image);
-        console.log(response.university);
-      } catch (error) {
-        console.error(error.message);
-      }
+      } catch (error) {}
     };
 
     fetchData();
   }, [id]);
-
   return (
     <Container>
-      {/* <h1 className="titleCountry">Polsha universitetlari</h1> */}
       <div className="univers">
         {data.map((i) => {
           return (
             <Link to={`${i.id}`} key={i.id}>
               <div className="university">
-                <div className="image" style={{backgroundImage: `url('${image}')`}}></div>
-                {/* <img
+                <div
                   className="image"
-                  src={`http://ishkal.uz/${i.image}`}
-                  alt="asd"
-                /> */}
+                  style={{ backgroundImage: `url('${image}')` }}
+                ></div>
                 <div className="name">{i.name}</div>
                 <div className="hint price">min-kontrakt {i.min_price}</div>
                 <div className="hint ielts">IELTS: {i.min_ielts}</div>
-                <div className="hint ielts">{JSON.parse(i.categories)}</div>
+                <div className="hint ielts">{JSON.parse(i.categories).join(',  ')}</div>
                 <div className="hint city">{i.city_name}</div>
               </div>
             </Link>
@@ -72,6 +60,7 @@ export default function Poland() {
 
 const Container = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@1,500&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
   @media screen and (max-width: 480px) {
     body {
       background-color: var(--tg-theme-secondary-bg-color);
@@ -81,6 +70,7 @@ const Container = styled.div`
       justify-content: space-between;
       padding: 20px;
     }
+
     .menu {
       font-size: 20px;
       margin: 10px;
@@ -101,11 +91,10 @@ const Container = styled.div`
       color: var(--tg-theme-text-color);
       text-decoration: none;
       background-color: var(--tg-theme-bg-color);
-      min-height: 150px;
+      min-height: 250px;
       width: 170px;
       border-radius: 10px;
-      font-family: "DM Sans", sans-serif;
-      /* border: 1px solid red; */
+      font-family: "Open Sans", sans-serif;
       text-align: center;
       padding: 2px;
       border: 0.1px solid white;
@@ -115,11 +104,11 @@ const Container = styled.div`
       color: var(--tg-theme-text-color);
     }
     .image {
-      /* margin: 0 auto; */
       width: 100%;
       height: 100px;
       border-radius: 10px;
-      object-fit: cover;
+      background-position: center;
+      background-size: cover;
     }
     .hint {
       color: var(--tg-theme-hint-color);
@@ -128,7 +117,7 @@ const Container = styled.div`
     h1 {
       color: var(--tg-theme-text-color);
     }
-    a{
+    a {
       color: var(--tg-theme-text-color);
       text-decoration: none;
     }
