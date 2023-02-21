@@ -13,8 +13,8 @@ export default function SinglePage() {
   const { id } = useParams();
   const [image, setData] = useState([]);
   const [field, setField] = useState([]);
-  console.log(image)
   const [file, setFile] = useState([]);
+  console.log(image)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,7 +34,7 @@ export default function SinglePage() {
         const { data: response } = await axios.get(
           api + `universities/${id}/field`
         );
-        setField(response.data);
+        setField(response.fields);
       } catch (error) {}
     };
 
@@ -74,13 +74,13 @@ export default function SinglePage() {
             Shartnoma yuklash
           </Link>
         </div>
-        {field.map((field) => {
+        {field.map((i) => {
           return (
-            <div className="accordion" key={field.id}>
+            <div className="accordion" key={i.id}>
               <Accordion
                 className="colorAccardion"
-                expanded={expanded === `panel${field.id}`}
-                onChange={handleChange(`panel${field.id}`)}
+                expanded={expanded === `panel${i.id}`}
+                onChange={handleChange(`panel${i.id}`)}
               >
                 <AccordionSummary
                   expandIcon={
@@ -93,21 +93,21 @@ export default function SinglePage() {
                     className="name"
                     sx={{ width: "50%", flexShrink: 0 }}
                   >
-                    {field.name}
+                    {i.name}
                   </Typography>
                   <Typography className="info" sx={{ color: "text.secondary" }}>
-                    {field.category}
+                    {i.category}
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails className="info">
                   <Typography>
-                    <p className="title">kontrakt:</p> {field.price} <br />{" "}
+                    <p className="title">kontrakt:</p> {i.price} <br />{" "}
                     <p className="title">o'qish davomiyligi:</p>{" "}
-                    {field.duration}yil
+                    {i.duration}yil
                   </Typography>
                   <Typography className="description">
                     <p className="title">Fakultet haqida malumot: </p> <br />
-                    {field.description}
+                    {i.description}
                   </Typography>
                 </AccordionDetails>
               </Accordion>
