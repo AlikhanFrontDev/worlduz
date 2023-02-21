@@ -29,8 +29,10 @@ export default function Poland() {
               <div className="university">
                 <div
                   className="image"
-                  style={{ backgroundImage: `url('http://ishkal.uz/${i.image}')` }}
-                ></div>
+                  style={{ backgroundImage: `url("http://ishkal.uz/${i.image}")`}} 
+                >
+                  <img src={`http://ishkal.uz/${i.image}`} alt="" />
+                </div>
                 <div className="name">{i.name}</div>
                 <div className="hint price">min-kontrakt {i.min_price}</div>
                 <div className="hint ielts">IELTS: {i.min_ielts}</div>
