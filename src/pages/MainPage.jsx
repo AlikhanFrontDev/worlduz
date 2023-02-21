@@ -129,14 +129,14 @@ export default function MainPage() {
           </div> */}
         </div>
         {data
-          .filter((i) => {
+          .filter((item) => {
             if (query === "") {
-              return i;
-            } else if (i.mame.toLowerCase().includes(query.toLowerCase())) {
-              return i;
+              return item;
+            } else if (item.mame.toLowerCase().includes(query.toLowerCase())) {
+              return (item);
             }
-          })
-          .map((i) => {
+            return item
+          }).map((i) => {
             return (
               <Link
                 to={`countries/${i.id}/university`}
@@ -145,7 +145,7 @@ export default function MainPage() {
               >
                 <h1>{i.mame}</h1>
               </Link>
-            );
+            )
           })}
       </div>
     </Container>
