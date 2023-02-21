@@ -6,6 +6,7 @@ import axios from "axios";
 
 export default function MainPage() {
   const [data, setData] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -116,17 +117,36 @@ export default function MainPage() {
         <div className="menu">Menu</div>
       </nav>
       <div className="countries">
-        {data.map((i) => {
-          return (
-            <Link
-              to={`countries/${i.id}/university`}
-              className="country background "
-              style={{ backgroundImage: `url('${i.image}')` }}
-            >
-              <h1>{i.mame}</h1>
-            </Link>
-          );
-        })}
+        <div className="search-bar-button">
+          <input
+            type="search"
+            placeholder="search"
+            className="search"
+            onChange={(event) => setQuery(event.target.value)}
+          />
+          {/* <div className="addButton" onClick={toggleModal}>
+            <AiOutlineUserAdd />
+          </div> */}
+        </div>
+        {data
+          .filter((i) => {
+            if (query === "") {
+              return i;
+            } else if (i.mame.toLowerCase().includes(query.toLowerCase())) {
+              return i;
+            }
+          })
+          .map((i) => {
+            return (
+              <Link
+                to={`countries/${i.id}/university`}
+                className="country background "
+                style={{ backgroundImage: `url('${i.image}')` }}
+              >
+                <h1>{i.mame}</h1>
+              </Link>
+            );
+          })}
       </div>
     </Container>
   );
@@ -141,6 +161,15 @@ const Container = styled.div`
       justify-content: space-between;
       padding: 20px;
     }
+    .search{
+      height: 30px;
+      width: 100%;
+      border-radius: 10px;
+      border: none;
+      padding: 10px;
+      background-color: var(--tg-theme-bg-color);
+      margin-bottom: 20px;
+      }
     a {
       text-decoration: none;
     }
