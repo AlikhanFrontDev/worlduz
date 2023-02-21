@@ -31,7 +31,6 @@ export default function Poland() {
                   className="image"
                   style={{ backgroundImage: `url("http://ishkal.uz/${i.image}")`}} 
                 >
-                  <img src={`http://ishkal.uz/${i.image}`} alt="" />
                 </div>
                 <div className="name">{i.name}</div>
                 <div className="hint price">min-kontrakt {i.min_price}</div>
