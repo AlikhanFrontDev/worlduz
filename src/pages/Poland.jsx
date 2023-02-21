@@ -7,8 +7,6 @@ import api from "../Api";
 export default function Poland() {
   const { id } = useParams();
   const [data, setData] = useState([]);
-  console.log(data)
-  const [image, setImage] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,18 +15,6 @@ export default function Poland() {
           api + `countries/${id}/university`
         );
         setData(response.university);
-      } catch (error) {}
-    };
-
-    fetchData();
-  }, [id]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data: response } = await axios.get(
-          api + `countries/${id}/university`
-        );
-        setImage(response.image);
       } catch (error) {}
     };
 
