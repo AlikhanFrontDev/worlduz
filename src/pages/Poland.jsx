@@ -96,6 +96,7 @@ const Container = styled.div`
       border-radius: 10px;
       background-position: center;
       background-size: cover;
+      background-color:red;
     }
     .hint {
       color: var(--tg-theme-hint-color);

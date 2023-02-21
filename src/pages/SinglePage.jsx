@@ -137,6 +137,7 @@ const Container = styled.div`
     position: center;
     background-size: cover;
     border-bottom-right-radius: 40px;
+    background-color: red;
   }
   .colorAccardion {
     background-color: var(--tg-theme-bg-color);
