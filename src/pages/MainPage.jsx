@@ -168,6 +168,7 @@ const Container = styled.div`
       padding: 10px;
       background-color: var(--tg-theme-bg-color);
       margin-bottom: 20px;
+      color: var(--tg-theme-text-color);
     }
     a {
       text-decoration: none;
