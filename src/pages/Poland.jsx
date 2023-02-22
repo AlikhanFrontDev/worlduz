@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
 import api from "../Api";
+import { IoMdArrowRoundBack } from 'react-icons/io';
+
 
 export default function Poland() {
   const { id } = useParams();
@@ -22,9 +24,16 @@ export default function Poland() {
 
     fetchData();
   }, [id]);
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
   return (
     <Container>
       <div className="search-bar-button">
+        <button onClick={goBack} className="back">
+          <IoMdArrowRoundBack />
+        </button>
         <input
           type="search"
           placeholder="Yo'nalish yoki Universitet bo'yicha qidiruv"
@@ -83,6 +92,17 @@ const Container = styled.div`
       padding: 20px;
     }
 
+    .back {
+      margin: 10px;
+      padding: 10px;
+      width: 80px;
+      border: none;
+      border-radius: 10px;
+      background-color: var(--tg-theme-bg-color);
+      color: var(--tg-theme-text-color);
+      font-size: 20px;
+    }
+
     .search {
       height: 30px;
       min-width: 350px;
@@ -90,7 +110,7 @@ const Container = styled.div`
       border: none;
       padding: 20px;
       background-color: var(--tg-theme-bg-color);
-      margin: 20px;
+      margin: 10px;
       color: var(--tg-theme-text-color);
     }
 
