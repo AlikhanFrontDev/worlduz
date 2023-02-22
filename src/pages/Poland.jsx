@@ -9,7 +9,8 @@ import { IoMdArrowRoundBack } from 'react-icons/io';
 export default function Poland() {
   const { id } = useParams();
   const [data, setData] = useState([]);
-
+  const [university, setUniversity] = useState([]);
+  console.log(data)
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -18,7 +19,19 @@ export default function Poland() {
         const { data: response } = await axios.get(
           api + `countries/${id}/university`
         );
-        setData(response.university);
+        setData(response);
+      } catch (error) {}
+    };
+
+    fetchData();
+  }, [id]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data: response } = await axios.get(
+          api + `countries/${id}/university`
+        );
+        setUniversity(response.university);
       } catch (error) {}
     };
 
@@ -30,6 +43,7 @@ export default function Poland() {
   };
   return (
     <Container>
+      <p className="uniPrice">Consalting servis to'lovi: {data.price}</p>
       <div className="search-bar-button">
         <button onClick={goBack} className="back">
           <IoMdArrowRoundBack />
@@ -42,7 +56,7 @@ export default function Poland() {
         />
       </div>
       <div className="univers">
-        {data
+        {university
           .filter((i) => {
             if (query === "") {
               return i;
@@ -58,7 +72,7 @@ export default function Poland() {
           .map((i) => {
             return (
               <Link to={`${i.id}`} key={i.id}>
-                <div className="university">
+                <div className="university" key={i.id}>
                   <div
                     className="image"
                     style={{ backgroundImage: `url("${i.image}")` }}
@@ -90,6 +104,18 @@ const Container = styled.div`
       display: flex;
       justify-content: space-between;
       padding: 20px;
+    }
+
+    .uniPrice{
+      font-size: 20px;
+      background-color: var(--tg-theme-bg-color);
+      color: var(--tg-theme-text-color);
+      border-radius: 10px;
+      padding: 5px 10px;
+      text-align: center;
+      width: 200px;
+      margin: 0 auto;
+      margin-top: 20px;
     }
 
     .back {
