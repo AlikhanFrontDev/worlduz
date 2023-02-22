@@ -7,7 +7,8 @@ import api from "../Api";
 export default function Poland() {
   const { id } = useParams();
   const [data, setData] = useState([]);
-  console.log(data)
+
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,25 +24,47 @@ export default function Poland() {
   }, [id]);
   return (
     <Container>
+      <div className="search-bar-button">
+        <input
+          type="search"
+          placeholder="Yo'nalish yoki Universitet bo'yicha qidiruv"
+          className="search"
+          onChange={(event) => setQuery(event.target.value)}
+        />
+      </div>
       <div className="univers">
-        {data.map((i) => {
-          return (
-            <Link to={`${i.id}`} key={i.id}>
-              <div className="university">
-                <div
-                  className="image"
-                  style={{ backgroundImage: `url("${i.image}")`}} 
-                >
+        {data
+          .filter((i) => {
+            if (query === "") {
+              return i;
+            } else if (
+              i.categories.toLowerCase().includes(query.toLowerCase())
+            ) {
+              return i;
+            } else if (i.name.toLowerCase().includes(query.toLowerCase())) {
+              return i;
+            }
+            return false;
+          })
+          .map((i) => {
+            return (
+              <Link to={`${i.id}`} key={i.id}>
+                <div className="university">
+                  <div
+                    className="image"
+                    style={{ backgroundImage: `url("${i.image}")` }}
+                  ></div>
+                  <div className="name">{i.name}</div>
+                  <div className="hint price">min-kontrakt {i.min_price}</div>
+                  <div className="hint ielts">IELTS: {i.min_ielts}</div>
+                  <div className="hint ielts">
+                    {JSON.parse(i.categories).join(",  ")}
+                  </div>
+                  <div className="hint city">{i.city_name}</div>
                 </div>
-                <div className="name">{i.name}</div>
-                <div className="hint price">min-kontrakt {i.min_price}</div>
-                <div className="hint ielts">IELTS: {i.min_ielts}</div>
-                <div className="hint ielts">{JSON.parse(i.categories).join(',  ')}</div>
-                <div className="hint city">{i.city_name}</div>
-              </div>
-            </Link>
-          );
-        })}
+              </Link>
+            );
+          })}
       </div>
     </Container>
   );
@@ -58,6 +81,17 @@ const Container = styled.div`
       display: flex;
       justify-content: space-between;
       padding: 20px;
+    }
+
+    .search {
+      height: 30px;
+      min-width: 350px;
+      border-radius: 10px;
+      border: none;
+      padding: 20px;
+      background-color: var(--tg-theme-bg-color);
+      margin: 20px;
+      color: var(--tg-theme-text-color);
     }
 
     .menu {

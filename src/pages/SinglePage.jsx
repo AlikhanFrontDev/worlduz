@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -8,13 +8,13 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import axios from "axios";
 import api from "../Api";
+import { IoMdArrowRoundBack } from 'react-icons/io';
 
 export default function SinglePage() {
   const { id } = useParams();
   const [image, setData] = useState([]);
   const [field, setField] = useState([]);
   const [file, setFile] = useState([]);
-  console.log(image)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,13 +56,19 @@ export default function SinglePage() {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+  const navigate = useNavigate();
+	const goBack = () => {
+		navigate(-1);
+	}
   return (
     <div>
       <Container>
         <div
           className="image"
           style={{ backgroundImage: `url('${image}')` }}
-        ></div>
+        >
+          <button onClick={goBack} className="back"><IoMdArrowRoundBack/></button>
+        </div>
         <div className="buttons">
           <Link
             className="button"
@@ -72,6 +78,9 @@ export default function SinglePage() {
           </Link>
           <Link className="button" to={file}>
             Shartnoma yuklash
+          </Link>
+          <Link className="button" to={"https://t.me/world_uz_bot?start=pay"}>
+            To'lov qilish
           </Link>
         </div>
         {field.map((i) => {
@@ -130,6 +139,15 @@ const Container = styled.div`
   .buttons {
     display: flex;
   }
+  .back{
+    margin: 15px;
+    padding: 15px;
+    width: 80px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff7b;
+    font-size: 20px;
+  }
   margin: 0;
   .image {
     height: 45vh;
@@ -158,10 +176,12 @@ const Container = styled.div`
     justify-content: center;
     border-radius: 10px;
     margin: 5px auto;
-    width: 170px;
-    height: 50px;
+    width: 100px;
+    height: 40px;
     background-color: var(--tg-theme-button-color);
     color: var(--tg-theme-button-text-color);
     text-decoration: none;
+    font-size: 12px;
+    text-align: center;
   }
 `;
